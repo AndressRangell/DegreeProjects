@@ -7,4 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="background_light">#f9fafd</color>
+    <color name="background_dark">#283161</color>
+    <color name="text_black">#07091e</color>
+    <color name="text_white">#f9fefe</color>
+    <color name="card_light">#f9fefe</color>
+    <color name="card_dark">#091244</color>
+    <color name="accent_one">#2de3ad</color>
+    <color name="accent_two">#01cffe</color>
+    <color name="accent_three">#4d89fd</color>
+    <color name="accent_four">#8a7df5</color>
+    <color name="accent_five">#ff7562</color>
 </resources>
