@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_menu"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/homeFragment"
         android:name="andres.rangel.degreeprojects.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        android:label="HomeFragment">
         <action
             android:id="@+id/action_homeFragment_to_projectDetailFragment"
             app:destination="@id/projectDetailFragment" />
@@ -17,8 +15,7 @@
     <fragment
         android:id="@+id/newProjectFragment"
         android:name="andres.rangel.degreeprojects.NewProjectFragment"
-        android:label="fragment_new_project"
-        tools:layout="@layout/fragment_new_project" >
+        android:label="NewProjectFragment">
         <action
             android:id="@+id/action_newProjectFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
@@ -26,8 +23,7 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="andres.rangel.degreeprojects.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        android:label="LoginFragment">
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
@@ -35,8 +31,7 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="andres.rangel.degreeprojects.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" >
+        android:label="ProfileFragment">
         <action
             android:id="@+id/action_profileFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
@@ -44,8 +39,7 @@
     <fragment
         android:id="@+id/projectListFragment"
         android:name="andres.rangel.degreeprojects.ProjectListFragment"
-        android:label="fragment_project_detail"
-        tools:layout="@layout/fragment_project_detail" >
+        android:label="ProjectListFragment">
         <action
             android:id="@+id/action_projectListFragment_to_projectDetailFragment"
             app:destination="@id/projectDetailFragment" />
@@ -53,11 +47,9 @@
     <fragment
         android:id="@+id/settingsFragment"
         android:name="andres.rangel.degreeprojects.SettingsFragment"
-        android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
+        android:label="SettingsFragment" />
     <fragment
         android:id="@+id/projectDetailFragment"
         android:name="andres.rangel.degreeprojects.ProjectDetailFragment"
-        android:label="fragment_project_detail"
-        tools:layout="@layout/fragment_project_detail" />
+        android:label="ProjectDetailFragment" />
 </navigation>
