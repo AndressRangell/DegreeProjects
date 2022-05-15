@@ -4,15 +4,291 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".ProfileFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ProfileFragment"
-        android:textSize="30sp"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_profile"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout"
+        app:srcCompat="@drawable/ic_launcher_background"
+        android:contentDescription="@string/description_no_available" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="70dp"
+        android:background="@drawable/background_menu"
+        android:elevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/silka"
+            android:textColor="@color/text_black"
+            android:layout_marginTop="70dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="32dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_email"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/item_background"
+                android:elevation="3dp"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="5dp">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/silka"
+                    android:text="@string/fullname"
+                    android:textColor="@color/text_black"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_name"
+                    app:layout_constraintStart_toEndOf="@+id/iv_name"
+                    app:layout_constraintTop_toTopOf="@id/iv_name" />
+
+                <ImageView
+                    android:id="@+id/iv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/description_no_available"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_name" />
+
+                <EditText
+                    android:id="@+id/et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/item_background"
+                    android:focusable="false"
+                    android:fontFamily="@font/silka"
+                    android:hint="@string/without_info"
+                    android:inputType="textPersonName"
+                    android:padding="5dp"
+                    android:textColor="@color/text_black"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/iv_name"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_name"
+                    tools:ignore="Autofill,LabelFor" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/item_background"
+                android:elevation="3dp"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="5dp">
+
+                <TextView
+                    android:id="@+id/tv_document"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/silka"
+                    android:text="@string/document"
+                    android:textColor="@color/text_black"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_document"
+                    app:layout_constraintStart_toEndOf="@+id/iv_document"
+                    app:layout_constraintTop_toTopOf="@id/iv_document" />
+
+                <ImageView
+                    android:id="@+id/iv_document"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/description_no_available"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_document" />
+
+                <EditText
+                    android:id="@+id/et_document"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/item_background"
+                    android:focusable="false"
+                    android:fontFamily="@font/silka"
+                    android:hint="@string/without_info"
+                    android:inputType="number"
+                    android:padding="5dp"
+                    android:textColor="@color/text_black"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/iv_document"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_document"
+                    tools:ignore="Autofill,LabelFor" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/item_background"
+                android:elevation="3dp"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="5dp">
+
+                <TextView
+                    android:id="@+id/tv_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/silka"
+                    android:text="@string/phone"
+                    android:textColor="@color/text_black"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_phone"
+                    app:layout_constraintStart_toEndOf="@+id/iv_phone"
+                    app:layout_constraintTop_toTopOf="@id/iv_phone" />
+
+                <ImageView
+                    android:id="@+id/iv_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/description_no_available"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_smartphone" />
+
+                <EditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/item_background"
+                    android:focusable="false"
+                    android:fontFamily="@font/silka"
+                    android:hint="@string/without_info"
+                    android:inputType="phone"
+                    android:padding="5dp"
+                    android:textColor="@color/text_black"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/iv_phone"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_phone"
+                    tools:ignore="Autofill,LabelFor" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/item_background"
+                android:elevation="3dp"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="5dp">
+
+                <TextView
+                    android:id="@+id/tv_career"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/silka"
+                    android:text="@string/career"
+                    android:textColor="@color/text_black"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_career"
+                    app:layout_constraintStart_toEndOf="@+id/iv_career"
+                    app:layout_constraintTop_toTopOf="@id/iv_career" />
+
+                <ImageView
+                    android:id="@+id/iv_career"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/description_no_available"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_faculty" />
+
+                <EditText
+                    android:id="@+id/et_career"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/item_background"
+                    android:focusable="false"
+                    android:fontFamily="@font/silka"
+                    android:hint="@string/without_info"
+                    android:inputType="text"
+                    android:padding="5dp"
+                    android:textColor="@color/text_black"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/iv_career"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_career"
+                    tools:ignore="Autofill,LabelFor" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Switch
+                android:id="@+id/switchEditable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/silka"
+                android:text="@string/edition_mode"
+                android:textColor="@color/text_black"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_logout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shape_button"
+                android:paddingLeft="64dp"
+                android:paddingRight="64dp"
+                android:text="@string/logout"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

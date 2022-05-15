@@ -52,6 +52,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-firestore-ktx'
     implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.google.firebase:firebase-storage'
+
+    // CicleImageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     // Architectural Components
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'

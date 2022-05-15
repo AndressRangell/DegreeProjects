@@ -28,4 +28,10 @@
     <string name="current_password">Contraseña actual</string>
     <string name="new_password">Nueva contraseña</string>
     <string name="update">Actualizar</string>
+    <string name="document">Número de documento</string>
+    <string name="phone">Número de teléfono</string>
+    <string name="career">Carrera que cursa</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="without_info">Sin información</string>
+    <string name="edition_mode">Modo edición</string>
 </resources>

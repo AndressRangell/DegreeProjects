@@ -2,8 +2,8 @@ package andres.rangel.degreeprojects
 
 import andres.rangel.degreeprojects.databinding.ActivityLoginBinding
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -17,9 +17,9 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         auth = Firebase.auth
 
         binding.signInAppCompatButton.setOnClickListener {
