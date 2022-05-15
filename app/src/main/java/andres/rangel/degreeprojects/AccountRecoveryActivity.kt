@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
@@ -18,15 +19,25 @@ class AccountRecoveryActivity : AppCompatActivity() {
         binding = ActivityAccountRecoveryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.senEmailAppCompatButton.setOnClickListener {
-            val emailAddress = binding.etEmail.text.toString()
-            Firebase.auth.sendPasswordResetEmail(emailAddress).addOnCompleteListener { task ->
-                if(task.isSuccessful) {
-                    val intent = Intent(this, LoginActivity::class.java)
-                    this.startActivity(intent)
-                } else {
-                    Toast.makeText(this, "Ingrese un email de una cuenta valida.",
-                        Toast.LENGTH_SHORT).show()
+        binding.btnSend.setOnClickListener {
+            val email = binding.etEmail.text.toString()
+            if (email.isEmpty()) {
+                Snackbar.make(
+                    binding.root,
+                    "Debes completar todos los campos",
+                    Snackbar.LENGTH_SHORT
+                ).show()
+            } else {
+                Firebase.auth.sendPasswordResetEmail(email).addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        this.startActivity(Intent(this, LoginActivity::class.java))
+                    } else {
+                        Snackbar.make(
+                            binding.root,
+                            "Ingrese un correo institucional válido",
+                            Snackbar.LENGTH_SHORT
+                        ).show()
+                    }
                 }
             }
         }

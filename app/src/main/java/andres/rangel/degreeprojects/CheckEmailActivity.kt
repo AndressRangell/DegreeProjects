@@ -21,9 +21,9 @@ class CheckEmailActivity : AppCompatActivity() {
         binding = ActivityCheckEmailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        sendEmailVerification()
-
         auth = FirebaseAuth.getInstance()
+
+        sendEmailVerification()
 
         val user = auth.currentUser
 
@@ -54,10 +54,7 @@ class CheckEmailActivity : AppCompatActivity() {
         val user = auth.currentUser
         user!!.sendEmailVerification().addOnCompleteListener(this) { task ->
             if (task.isSuccessful) {
-                Snackbar.make(
-                    binding.root, "Por favor verifica tu correo",
-                    Snackbar.LENGTH_SHORT
-                ).show()
+                Timber.d("Verification message send")
             }
         }.addOnFailureListener {
             Snackbar.make(
