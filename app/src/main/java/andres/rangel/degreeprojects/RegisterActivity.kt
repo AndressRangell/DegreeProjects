@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import timber.log.Timber
 import java.util.regex.Pattern
@@ -16,14 +17,16 @@ import java.util.regex.Pattern
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var firestore: FirebaseFirestore
     private lateinit var binding: ActivityRegisterBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         auth = Firebase.auth
+        firestore = FirebaseFirestore.getInstance()
 
         binding.btnSignUp.setOnClickListener {
 
@@ -84,5 +87,11 @@ class RegisterActivity : AppCompatActivity() {
                     ).show()
                 }
             }
+
+        firestore.collection("users").document(email).set(
+            hashMapOf(
+                "name" to binding.etName.text.toString()
+            )
+        )
     }
 }
