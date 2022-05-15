@@ -2,11 +2,8 @@ package andres.rangel.degreeprojects
 
 import andres.rangel.degreeprojects.databinding.ActivityMainBinding
 import android.os.Bundle
-import android.view.Gravity
 import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 
@@ -47,5 +44,9 @@ class MainActivity : AppCompatActivity() {
             binding.navigationHostFragment.getFragment<NavHostFragment>().navController
                 .navigate(R.id.newProjectFragment)
         }
+    }
+
+    override fun onBackPressed() {
+        return
     }
 }

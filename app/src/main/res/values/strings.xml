@@ -8,4 +8,24 @@
     <string name="login">Iniciar sesión</string>
     <string name="forgot_password"><u>Olvidé mi contraseña</u></string>
     <string name="create_account">Crear cuenta</string>
+    <string name="create_account_message">¿No tienes cuenta?</string>
+    <string name="register_title">Registro</string>
+    <string name="name">Nombre</string>
+    <string name="surname">Apellidos</string>
+    <string name="confirm_password">Confirmar contraseña</string>
+    <string name="account_recovery">Recuperar cuenta</string>
+    <string name="account_recovery_message">Ingresa tu email para cambiar la contraseña</string>
+    <string name="send">Enviar</string>
+    <string name="check_email">Verificar correo institucional</string>
+    <string name="check_email_message">Para completar su registro. ¡Por favor! verifique su correo institucional.</string>
+    <string name="continuee">Continuar</string>
+    <string name="update_password">Cambiar contraseña</string>
+    <string name="update_password_message">Por motivos de seguridad debes ingresar tu contraseña actual.</string>
+    <string name="delete">Eliminar</string>
+    <string name="description_no_available">Descripción no disponible</string>
+    <string name="register">Registro</string>
+    <string name="fullname">Nombre completo</string>
+    <string name="current_password">Contraseña actual</string>
+    <string name="new_password">Nueva contraseña</string>
+    <string name="update">Actualizar</string>
 </resources>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "296076614785",
+    "project_id": "degreeprojects-badf8",
+    "storage_bucket": "degreeprojects-badf8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:296076614785:android:209b779398b4c488360180",
+        "android_client_info": {
+          "package_name": "andres.rangel.degreeprojects"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "296076614785-ip1vgbhc54edttjc1josb4a1t53tqfk3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "andres.rangel.degreeprojects",
+            "certificate_hash": "c09e242095dcc3773b1f502d79e73f8593c79c0f"
+          }
+        },
+        {
+          "client_id": "296076614785-f5l89g9dodctj6j4m0jqis5a3fsdomdm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRHEMMwOBtMdcP1aiDvKRRrquY2mXSS4I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "296076614785-f5l89g9dodctj6j4m0jqis5a3fsdomdm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

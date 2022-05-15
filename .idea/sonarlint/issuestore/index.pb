@@ -1,8 +1,6 @@
 
 X
 (gradle/wrapper/gradle-wrapper.properties,f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
-<
-build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
 u
 Eapp/src/main/java/andres/rangel/degreeprojects/ProjectListFragment.kt,9/2/92cc607797f873d476e3fa99f902d4b4f0641d41
 r
@@ -11,9 +9,21 @@ q
 Aapp/src/main/java/andres/rangel/degreeprojects/ProfileFragment.kt,a/d/adb7787c9e8202ccb9ab6beb368b6d83d2a617ad
 w
 Gapp/src/main/java/andres/rangel/degreeprojects/ProjectDetailFragment.kt,7/f/7f5f97d8cbc94b8cbd715857ce7c06b1fceb19aa
-@
-app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
 ?
 settings.gradle,0/5/05efc8b1657769a27696d478ded1e95f38737233
 A
 gradle.properties,2/a/2afbb999f001938c88fa43fc2ef52abf0f8213e4
+t
+Dapp/src/main/java/andres/rangel/degreeprojects/NewProjectFragment.kt,2/8/288a1d6d0f87a4232ddebfa7554fc559067cc164
+n
+>app/src/main/java/andres/rangel/degreeprojects/HomeFragment.kt,5/d/5d90df2f5246adfe326619dff4e687b0f1ca7010
+H
+app/google-services.json,f/d/fd8d34b142d02ec743a8efefefd2c097961666e9
+<
+build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
+y
+Iapp/src/main/java/andres/rangel/degreeprojects/AccountRecoveryActivity.kt,b/9/b9d780c4366b86b8b17ea9226ac6222794bc03b7
+P
+ app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
+n
+>app/src/main/java/andres/rangel/degreeprojects/MainActivity.kt,e/c/ecfb8237c2566be52a475ab70932dd166465497e
