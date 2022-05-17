@@ -29,10 +29,10 @@
         android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:fabCradleMargin="10dp"
+        app:fabCradleMargin="8dp"
         app:fabCradleVerticalOffset="5dp"
         android:background="@color/card_light"
-        app:fabCradleRoundedCornerRadius="10dp"
+        app:fabCradleRoundedCornerRadius="30dp"
         android:layout_gravity="bottom" >
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -49,8 +49,9 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabNewProject"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:fabCustomSize="50dp"
         android:src="@drawable/ic_more"
         android:foregroundTint="@color/gray"
         app:layout_anchor="@id/bottomAppBar"

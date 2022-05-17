@@ -34,4 +34,9 @@
     <string name="logout">Cerrar sesión</string>
     <string name="without_info">Sin información</string>
     <string name="edition_mode">Modo edición</string>
+    <string name="home">Inicio</string>
+    <string name="projects">Proyectos</string>
+    <string name="settings">Ajustes</string>
+    <string name="profile">Perfil</string>
+    <string name="save_data">Guardar datos</string>
 </resources>

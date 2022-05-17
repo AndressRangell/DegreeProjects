@@ -17,9 +17,9 @@ H
 app/google-services.json,f/d/fd8d34b142d02ec743a8efefefd2c097961666e9
 <
 build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
-P
- app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
 x
 Happ/src/main/java/andres/rangel/degreeprojects/UpdatePasswordActivity.kt,c/0/c0e76ad73e95f1e4e73e9f05abd2dad3f2370b26
 y
 Iapp/src/main/java/andres/rangel/degreeprojects/AccountRecoveryActivity.kt,b/9/b9d780c4366b86b8b17ea9226ac6222794bc03b7
+o
+?app/src/main/java/andres/rangel/degreeprojects/LoginActivity.kt,0/0/00f0d997007034c5c4f2d352cce6abf6d303a3a2

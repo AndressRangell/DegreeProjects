@@ -29,6 +29,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_marginTop="20dp"
+            android:fontFamily="@font/silka"
             android:text="@string/login_title"
             android:textColor="@color/black"
             android:textSize="24sp" />
@@ -51,10 +52,12 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
             android:layout_marginRight="24dp"
+            android:fontFamily="@font/silka"
             android:autofillHints="@string/email"
             android:background="@drawable/shape_field"
             android:drawableStart="@drawable/ic_email"
             android:drawablePadding="16dp"
+            android:textSize="16sp"
             android:layout_marginTop="10dp"
             android:ems="10"
             android:hint="@string/email"
@@ -69,6 +72,8 @@
             android:layout_marginTop="24dp"
             android:layout_marginRight="24dp"
             android:autofillHints="@string/password"
+            android:fontFamily="@font/silka"
+            android:textSize="16sp"
             android:background="@drawable/shape_field"
             android:drawableStart="@drawable/ic_lock"
             android:drawablePadding="16dp"
@@ -83,6 +88,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
+            android:fontFamily="@font/silka"
             android:layout_marginStart="24dp"
             android:textSize="16sp"
             android:text="@string/forgot_password"
@@ -93,6 +99,9 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="32dp"
+            android:fontFamily="@font/silka"
+            android:textSize="18sp"
+            android:textAllCaps="false"
             android:background="@drawable/shape_button"
             android:paddingLeft="64dp"
             android:paddingRight="64dp"
@@ -114,20 +123,22 @@
             android:id="@+id/createAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/silka"
             android:layout_weight="0"
             android:text="@string/create_account_message"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/signUpTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
+            android:fontFamily="@font/silka"
             android:layout_marginRight="16dp"
             android:layout_weight="0"
             android:text="@string/create_account"
-            android:textColor="#ff9900"
-            android:textSize="24sp" />
+            android:textColor="@color/accent_five"
+            android:textSize="18sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

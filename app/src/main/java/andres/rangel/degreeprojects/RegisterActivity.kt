@@ -65,7 +65,6 @@ class RegisterActivity : AppCompatActivity() {
             } else {
                 createAccount(email, password)
             }
-
         }
 
         binding.btnBack.setOnClickListener {
