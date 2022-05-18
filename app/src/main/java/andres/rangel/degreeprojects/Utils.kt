@@ -1,6 +1,7 @@
 package andres.rangel.degreeprojects
 
 import android.graphics.Bitmap
+import android.net.Uri
 
 class Utils {
 
@@ -8,11 +9,11 @@ class Utils {
         var bitmap: Bitmap? = null
         var email: String? = null
         var name: String? = null
-        var document: Long? = null
-        var phone: Long? = null
+        var document: String? = null
+        var phone: String? = null
         var career: String? = null
 
-        var newBitmap: Bitmap? = null
+        var imageUri: Uri? = null
     }
 
 }

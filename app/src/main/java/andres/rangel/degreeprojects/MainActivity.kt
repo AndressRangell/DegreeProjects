@@ -51,7 +51,8 @@ class MainActivity : AppCompatActivity() {
         binding.navigationHostFragment.getFragment<NavHostFragment>().navController
             .addOnDestinationChangedListener { _, destination, _ ->
                 when (destination.id) {
-                    R.id.homeFragment, R.id.projectListFragment, R.id.settingsFragment, R.id.profileFragment -> {
+                    R.id.homeFragment, R.id.projectListFragment, R.id.settingsFragment,
+                    R.id.profileFragment, R.id.newProjectFragment -> {
                         binding.bottomAppBar.visibility = View.VISIBLE
                         binding.fabNewProject.visibility = View.VISIBLE
                     }
@@ -74,16 +75,16 @@ class MainActivity : AppCompatActivity() {
         email = auth.currentUser?.email
         val result = firestore.collection("users").document(email.toString())
         result.get().addOnSuccessListener {
-            name = it.get("name").toString()
-            document = it.get("document") as Long?
-            phone = it.get("phone") as Long?
-            career = it.get("career").toString()
+            name = it.get("name")?.toString()
+            document = it.get("document")?.toString()
+            phone = it.get("phone")?.toString()
+            career = it.get("career")?.toString()
         }
     }
 
     private fun getProfileImage() {
         storage = FirebaseStorage.getInstance()
-        val nameImage = "${email?.replace("@", "")}.png"
+        val nameImage = "${email?.replace("@", "")}"
         val reference = storage.getReference(nameImage)
 
         try {
@@ -91,10 +92,13 @@ class MainActivity : AppCompatActivity() {
             reference.getFile(file).addOnSuccessListener {
                 val bitmapReference = BitmapFactory.decodeFile(file.absolutePath)
                 val exif = ExifInterface(file)
-                val orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_UNDEFINED)
+                val orientation = exif.getAttributeInt(
+                    ExifInterface.TAG_ORIENTATION,
+                    ExifInterface.ORIENTATION_UNDEFINED
+                )
                 val matrix = Matrix()
 
-                when(orientation) {
+                when (orientation) {
                     ExifInterface.ORIENTATION_ROTATE_90 -> matrix.postRotate(90F)
                     ExifInterface.ORIENTATION_ROTATE_180 -> matrix.postRotate(180F)
                     ExifInterface.ORIENTATION_ROTATE_270 -> matrix.postRotate(270F)

@@ -23,3 +23,9 @@ y
 Iapp/src/main/java/andres/rangel/degreeprojects/AccountRecoveryActivity.kt,b/9/b9d780c4366b86b8b17ea9226ac6222794bc03b7
 o
 ?app/src/main/java/andres/rangel/degreeprojects/LoginActivity.kt,0/0/00f0d997007034c5c4f2d352cce6abf6d303a3a2
+t
+Dapp/src/main/java/andres/rangel/degreeprojects/CheckEmailActivity.kt,a/1/a1495a0456b6cef02bda1d58c6ea0ba3708da394
+t
+Dapp/src/main/java/andres/rangel/degreeprojects/NewProjectFragment.kt,2/8/288a1d6d0f87a4232ddebfa7554fc559067cc164
+@
+app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164

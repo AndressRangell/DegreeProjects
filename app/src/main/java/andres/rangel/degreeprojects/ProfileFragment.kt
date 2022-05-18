@@ -4,7 +4,7 @@ import andres.rangel.degreeprojects.Utils.Companion.bitmap
 import andres.rangel.degreeprojects.Utils.Companion.career
 import andres.rangel.degreeprojects.Utils.Companion.document
 import andres.rangel.degreeprojects.Utils.Companion.email
-import andres.rangel.degreeprojects.Utils.Companion.newBitmap
+import andres.rangel.degreeprojects.Utils.Companion.imageUri
 import andres.rangel.degreeprojects.Utils.Companion.name
 import andres.rangel.degreeprojects.Utils.Companion.phone
 import andres.rangel.degreeprojects.databinding.FragmentProfileBinding
@@ -14,15 +14,18 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
 import android.provider.MediaStore
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.runBlocking
 import java.io.BufferedInputStream
-import java.io.ByteArrayOutputStream
 import java.io.FileNotFoundException
 
 
@@ -37,6 +40,9 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentProfileBinding.bind(view)
 
+        storage = FirebaseStorage.getInstance()
+        firestore = FirebaseFirestore.getInstance()
+
         binding.apply {
 
             bitmap?.let {
@@ -44,32 +50,19 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             }
             tvEmail.text = email
             etName.setText(name)
+            etDocument.setText(document)
+            etPhone.setText(phone)
+            etCareer.setText(career)
 
             switchEditable.setOnCheckedChangeListener { _, isChecked ->
                 if (isChecked) {
-                    etName.isFocusableInTouchMode = true
-                    etDocument.isFocusableInTouchMode = true
-                    etPhone.isFocusableInTouchMode = true
-                    etCareer.isFocusableInTouchMode = true
-                    circleChangeImage.visibility = View.VISIBLE
-                    btnLogout.text = getString(R.string.save_data)
+                    editionEnabled()
                 } else {
-                    if (bitmap != null) {
+                    cleanFields()
+                    editionDisabled()
+                    Handler().postDelayed({
                         circleImageView.setImageBitmap(bitmap)
-                    } else {
-                        circleImageView.setImageResource(R.drawable.ic_default_profile)
-                    }
-                    tvName.text = name ?: ""
-                    tvDocument.text = document.toString()
-                    tvPhone.text = phone.toString()
-                    tvCareer.text = career ?: ""
-
-                    etName.isFocusableInTouchMode = false
-                    etDocument.isFocusableInTouchMode = false
-                    etPhone.isFocusableInTouchMode = false
-                    etCareer.isFocusableInTouchMode = false
-                    circleChangeImage.visibility = View.GONE
-                    btnLogout.text = getString(R.string.logout)
+                    }, 1000)
                 }
             }
 
@@ -91,19 +84,16 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     }
 
     private fun saveData() {
-        storage = FirebaseStorage.getInstance()
-        val reference = storage.getReference(email?.replace("@", "") ?: "")
-        val baos = ByteArrayOutputStream()
-        newBitmap?.compress(Bitmap.CompressFormat.JPEG, 100, baos)
-        bitmap = newBitmap
-        val data = baos.toByteArray()
+        imageUri?.let { uri ->
+            val reference = storage.getReference(email?.replace("@", "") ?: "")
 
-        val uploadTask = reference.putBytes(data)
-        uploadTask.addOnFailureListener {
-            // Handle unsuccessful uploads
-        }.addOnSuccessListener { taskSnapshot ->
-            // taskSnapshot.metadata contains file metadata such as size, content-type, etc.
-            // ...
+            val uploadTask = reference.putFile(uri)
+            uploadTask.addOnSuccessListener {
+                bitmap = uriToBitmap(uri)
+            }.addOnFailureListener {
+                Toast.makeText(requireContext(), "Formatos válidos: JPG/JPEG", Toast.LENGTH_LONG)
+                    .show()
+            }
         }
 
         email?.let {
@@ -115,6 +105,17 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                     "career" to binding.etCareer.text.toString()
                 )
             )
+        }
+    }
+
+    private fun uriToBitmap(imageUri: Uri): Bitmap? {
+        return try {
+            val inputStream = requireContext().contentResolver.openInputStream(imageUri)
+            val bis = BufferedInputStream(inputStream)
+            BitmapFactory.decodeStream(bis)
+        } catch (e: FileNotFoundException) {
+            e.printStackTrace()
+            null
         }
     }
 
@@ -134,17 +135,45 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == selectedPicture) {
-            val selectedImage: Uri? = data?.data
-            try {
-                val inputStream = selectedImage?.let {
-                    requireContext().contentResolver.openInputStream(it)
-                }
-                val bis = BufferedInputStream(inputStream)
-                newBitmap = BitmapFactory.decodeStream(bis)
-                binding.circleImageView.setImageBitmap(newBitmap)
-            } catch (e: FileNotFoundException) {
-                e.printStackTrace()
+            imageUri = data?.data!!
+            imageUri?.let {
+                binding.circleImageView.setImageURI(it)
             }
+        }
+    }
+
+    private fun cleanFields() {
+        binding.apply {
+            etName.setText(name)
+            etDocument.setText(document)
+            etPhone.setText(phone)
+            etCareer.setText(career)
+        }
+    }
+
+    private fun editionEnabled() {
+        binding.apply {
+            etName.isFocusableInTouchMode = true
+            etDocument.isFocusableInTouchMode = true
+            etPhone.isFocusableInTouchMode = true
+            etCareer.isFocusableInTouchMode = true
+            circleChangeImage.visibility = View.VISIBLE
+            btnLogout.text = getString(R.string.save_data)
+        }
+    }
+
+    private fun editionDisabled() {
+        binding.apply {
+            etName.isFocusableInTouchMode = false
+            etName.clearFocus()
+            etDocument.isFocusableInTouchMode = false
+            etDocument.clearFocus()
+            etPhone.isFocusableInTouchMode = false
+            etPhone.clearFocus()
+            etCareer.isFocusableInTouchMode = false
+            etCareer.clearFocus()
+            circleChangeImage.visibility = View.GONE
+            btnLogout.text = getString(R.string.logout)
         }
     }
 
