@@ -39,4 +39,13 @@
     <string name="settings">Ajustes</string>
     <string name="profile">Perfil</string>
     <string name="save_data">Guardar datos</string>
+    <string name="do_you_have_an_idea">¿Tienes una idea?</string>
+    <string name="share_it">compártela…</string>
+    <string name="project_name">Nombre del proyecto</string>
+    <string name="create_project">Crear proyecto</string>
+    <string name="description_project">Descripción del proyecto</string>
+    <string name="tools">Herramientas y tecnologías</string>
+    <string name="email_one">Correo electrónico estudiante 1</string>
+    <string name="email_two">Correo electrónico estudiante 2</string>
+    <string name="optional">Opcional</string>
 </resources>

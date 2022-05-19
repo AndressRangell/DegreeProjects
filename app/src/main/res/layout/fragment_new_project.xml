@@ -6,19 +6,124 @@
     android:layout_height="match_parent"
     tools:context=".NewProjectFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="NewProjectFragment"
-        android:textSize="30sp"
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="30dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/btnCreateProject"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/btn_back"
-        android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/silka"
+            android:text="@string/do_you_have_an_idea"
+            android:textColor="@color/text_black"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvSubTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:fontFamily="@font/silka"
+            android:gravity="end"
+            android:text="@string/share_it"
+            android:textColor="@color/text_black"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/etNameProject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/shape_field"
+            android:fontFamily="@font/silka"
+            android:hint="@string/project_name"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textSize="16sp"
+            tools:ignore="Autofill" />
+
+        <EditText
+            android:id="@+id/etTools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shape_field"
+            android:fontFamily="@font/silka"
+            android:hint="@string/tools"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textSize="16sp"
+            tools:ignore="Autofill" />
+
+        <EditText
+            android:id="@+id/etDescriptionProject"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shape_field"
+            android:fontFamily="@font/silka"
+            android:gravity="start"
+            android:hint="@string/description_project"
+            android:inputType="textMultiLine"
+            android:padding="16dp"
+            android:textSize="16sp"
+            tools:ignore="Autofill" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:text="@string/optional"/>
+
+        <EditText
+            android:id="@+id/etEmailOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shape_field"
+            android:fontFamily="@font/silka"
+            android:hint="@string/email_one"
+            android:inputType="textEmailAddress"
+            android:padding="16dp"
+            android:textSize="16sp"
+            tools:ignore="Autofill" />
+
+        <EditText
+            android:id="@+id/etEmailTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shape_field"
+            android:fontFamily="@font/silka"
+            android:hint="@string/email_two"
+            android:inputType="textEmailAddress"
+            android:padding="16dp"
+            android:textSize="16sp"
+            tools:ignore="Autofill" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCreateProject"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/shape_button"
+        android:fontFamily="@font/silka"
+        android:layout_marginBottom="30dp"
+        android:paddingLeft="64dp"
+        android:paddingRight="64dp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:text="@string/create_project"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

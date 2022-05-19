@@ -45,7 +45,7 @@
             android:fontFamily="@font/silka"
             android:layout_marginTop="20dp"
             android:text="@string/register"
-            android:textColor="@color/black"
+            android:textColor="@color/text_black"
             android:textSize="24sp" />
     </LinearLayout>
 
@@ -68,13 +68,14 @@
             android:layout_marginTop="24dp"
             android:layout_marginRight="24dp"
             android:fontFamily="@font/silka"
+            android:textColor="@color/text_black"
             android:textSize="16sp"
             android:background="@drawable/shape_field"
             android:drawableStart="@drawable/ic_name"
             android:drawablePadding="16dp"
             android:ems="10"
             android:hint="@string/fullname"
-            android:inputType="textEmailAddress"
+            android:inputType="textPersonName"
             android:padding="16dp"
             tools:ignore="Autofill" />
 
@@ -86,6 +87,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginRight="24dp"
             android:fontFamily="@font/silka"
+            android:textColor="@color/text_black"
             android:textSize="16sp"
             android:background="@drawable/shape_field"
             android:drawableStart="@drawable/ic_email"
@@ -106,6 +108,7 @@
             android:background="@drawable/shape_field"
             android:drawableStart="@drawable/ic_lock"
             android:fontFamily="@font/silka"
+            android:textColor="@color/text_black"
             android:textSize="16sp"
             android:drawablePadding="16dp"
             android:ems="10"
@@ -127,6 +130,7 @@
             android:drawablePadding="16dp"
             android:ems="10"
             android:fontFamily="@font/silka"
+            android:textColor="@color/text_black"
             android:textSize="16sp"
             android:hint="@string/confirm_password"
             android:inputType="textPassword"

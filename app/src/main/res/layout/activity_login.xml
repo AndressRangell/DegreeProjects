@@ -27,11 +27,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/silka"
+            android:gravity="center"
             android:text="@string/login_title"
-            android:textColor="@color/black"
+            android:textColor="@color/text_black"
             android:textSize="24sp" />
     </LinearLayout>
 
@@ -57,6 +57,7 @@
             android:background="@drawable/shape_field"
             android:drawableStart="@drawable/ic_email"
             android:drawablePadding="16dp"
+            android:textColor="@color/text_black"
             android:textSize="16sp"
             android:layout_marginTop="10dp"
             android:ems="10"
@@ -73,6 +74,7 @@
             android:layout_marginRight="24dp"
             android:autofillHints="@string/password"
             android:fontFamily="@font/silka"
+            android:textColor="@color/text_black"
             android:textSize="16sp"
             android:background="@drawable/shape_field"
             android:drawableStart="@drawable/ic_lock"
@@ -99,14 +101,14 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="32dp"
-            android:fontFamily="@font/silka"
-            android:textSize="18sp"
-            android:textAllCaps="false"
             android:background="@drawable/shape_button"
+            android:fontFamily="@font/silka"
             android:paddingLeft="64dp"
             android:paddingRight="64dp"
             android:text="@string/login"
-            android:textColor="@color/white" />
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
     </LinearLayout>
 
     <LinearLayout

@@ -14,9 +14,14 @@ class NewProjectFragment: Fragment(R.layout.fragment_new_project) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentNewProjectBinding.bind(view)
 
-        binding.btnBack.setOnClickListener {
+        binding.btnCreateProject.setOnClickListener {
+            createProject()
             findNavController().navigateUp()
         }
+    }
+
+    private fun createProject() {
+        TODO("Not yet implemented")
     }
 
 }
