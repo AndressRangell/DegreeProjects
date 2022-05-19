@@ -15,12 +15,8 @@ class NewProjectFragment: Fragment(R.layout.fragment_new_project) {
         binding = FragmentNewProjectBinding.bind(view)
 
         binding.btnBack.setOnClickListener {
-            findNavController().navigate(
-                R.id.action_newProjectFragment_to_homeFragment, savedInstanceState, null
-            )
+            findNavController().navigateUp()
         }
     }
-
-
 
 }

@@ -43,6 +43,7 @@ class LoginActivity : AppCompatActivity() {
         binding.signUpTextView.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         binding.recoveryAccountTextView.setOnClickListener {
@@ -58,8 +59,10 @@ class LoginActivity : AppCompatActivity() {
         if (currentUser != null) {
             if (currentUser.isEmailVerified) {
                 startActivity(Intent(this, MainActivity::class.java))
+                finish()
             } else {
                 startActivity(Intent(this, CheckEmailActivity::class.java))
+                finish()
             }
         }
     }
@@ -71,9 +74,11 @@ class LoginActivity : AppCompatActivity() {
                     if (task.result.user?.isEmailVerified == true) {
                         Timber.d("signInWithEmail: success")
                         startActivity(Intent(this, MainActivity::class.java))
+                        finish()
                     } else {
                         Timber.d("signInWithEmail: Failure")
                         startActivity(Intent(this, CheckEmailActivity::class.java))
+                        finish()
                     }
                 } else {
                     Timber.e("signInWithEmail:failure ${task.exception}")

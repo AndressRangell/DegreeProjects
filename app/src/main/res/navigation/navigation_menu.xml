@@ -15,15 +15,15 @@
     <fragment
         android:id="@+id/newProjectFragment"
         android:name="andres.rangel.degreeprojects.NewProjectFragment"
-        android:label="NewProjectFragment">
-        <action
-            android:id="@+id/action_newProjectFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
+        android:label="NewProjectFragment"/>
     <fragment
         android:id="@+id/profileFragment"
         android:name="andres.rangel.degreeprojects.ProfileFragment"
-        android:label="ProfileFragment"/>
+        android:label="ProfileFragment">
+        <action
+            android:id="@+id/action_profileFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/projectListFragment"
         android:name="andres.rangel.degreeprojects.ProjectListFragment"
@@ -31,11 +31,21 @@
         <action
             android:id="@+id/action_projectListFragment_to_projectDetailFragment"
             app:destination="@id/projectDetailFragment" />
+        <action
+            android:id="@+id/action_projectListFragment_to_newProjectFragment"
+            app:destination="@id/newProjectFragment" />
+        <action
+            android:id="@+id/action_projectListFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="andres.rangel.degreeprojects.SettingsFragment"
-        android:label="SettingsFragment" />
+        android:label="SettingsFragment" >
+        <action
+            android:id="@+id/action_settingsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/projectDetailFragment"
         android:name="andres.rangel.degreeprojects.ProjectDetailFragment"

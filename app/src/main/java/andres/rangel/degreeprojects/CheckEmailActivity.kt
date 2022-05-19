@@ -6,9 +6,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
-import com.google.firebase.ktx.Firebase
 import timber.log.Timber
 
 class CheckEmailActivity : AppCompatActivity() {
@@ -45,7 +43,10 @@ class CheckEmailActivity : AppCompatActivity() {
         }
 
         binding.ivLogout.setOnClickListener {
-            signOut()
+            auth.signOut()
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
     }
@@ -68,11 +69,7 @@ class CheckEmailActivity : AppCompatActivity() {
     private fun reload() {
         val intent = Intent(this, MainActivity::class.java)
         this.startActivity(intent)
+        finish()
     }
 
-    private fun signOut() {
-        Firebase.auth.signOut()
-        val intent = Intent(this, LoginActivity::class.java)
-        startActivity(intent)
-    }
 }

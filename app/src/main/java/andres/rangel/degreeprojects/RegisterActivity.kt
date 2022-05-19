@@ -69,6 +69,7 @@ class RegisterActivity : AppCompatActivity() {
 
         binding.btnBack.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
+            finish()
         }
 
     }
@@ -78,6 +79,7 @@ class RegisterActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     startActivity(Intent(this, CheckEmailActivity::class.java))
+                    finish()
                 } else {
                     Timber.e("createUserWithEmail:failure ${task.exception}")
                     Snackbar.make(
@@ -92,5 +94,10 @@ class RegisterActivity : AppCompatActivity() {
                 "name" to binding.etName.text.toString()
             )
         )
+    }
+
+    override fun onBackPressed() {
+        startActivity(Intent(this, LoginActivity::class.java))
+        finish()
     }
 }

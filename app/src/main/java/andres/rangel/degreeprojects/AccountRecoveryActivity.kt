@@ -3,7 +3,6 @@ package andres.rangel.degreeprojects
 import andres.rangel.degreeprojects.databinding.ActivityAccountRecoveryBinding
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.ktx.auth
@@ -30,7 +29,11 @@ class AccountRecoveryActivity : AppCompatActivity() {
             } else {
                 Firebase.auth.sendPasswordResetEmail(email).addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        this.startActivity(Intent(this, LoginActivity::class.java))
+                        Snackbar.make(
+                            binding.root,
+                            "Se envió un mensaje a tu correo institucional para reestablecer tu contraseña",
+                            Snackbar.LENGTH_LONG
+                        ).show()
                     } else {
                         Snackbar.make(
                             binding.root,
