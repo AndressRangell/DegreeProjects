@@ -17,11 +17,17 @@ H
 build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
 x
 Happ/src/main/java/andres/rangel/degreeprojects/UpdatePasswordActivity.kt,c/0/c0e76ad73e95f1e4e73e9f05abd2dad3f2370b26
+o
+?app/src/main/java/andres/rangel/degreeprojects/LoginActivity.kt,0/0/00f0d997007034c5c4f2d352cce6abf6d303a3a2
+y
+Iapp/src/main/java/andres/rangel/degreeprojects/AccountRecoveryActivity.kt,b/9/b9d780c4366b86b8b17ea9226ac6222794bc03b7
+r
+Bapp/src/main/java/andres/rangel/degreeprojects/RegisterActivity.kt,6/0/604d235dfaf0e1725a53830ba6df349b9832da9f
+t
+Dapp/src/main/java/andres/rangel/degreeprojects/CheckEmailActivity.kt,a/1/a1495a0456b6cef02bda1d58c6ea0ba3708da394
+q
+Aapp/src/main/java/andres/rangel/degreeprojects/ProfileFragment.kt,a/d/adb7787c9e8202ccb9ab6beb368b6d83d2a617ad
 @
 app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
 P
  app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
-g
-7app/src/main/java/andres/rangel/degreeprojects/Utils.kt,8/2/8283bb04ed321cf14d28b601de146f189a6536fc
-u
-Eapp/src/main/java/andres/rangel/degreeprojects/ProjectListFragment.kt,9/2/92cc607797f873d476e3fa99f902d4b4f0641d41

@@ -4,6 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/background.xml" value="0.226" />
+        <entry key="app/src/main/res/drawable/background_card_accent_four.xml" value="0.1845" />
+        <entry key="app/src/main/res/drawable/background_card_accent_three.xml" value="0.1845" />
+        <entry key="app/src/main/res/drawable/background_card_one.xml" value="0.1845" />
+        <entry key="app/src/main/res/drawable/background_card_two.xml" value="0.1845" />
         <entry key="app/src/main/res/drawable/background_menu.xml" value="0.226" />
         <entry key="app/src/main/res/drawable/bottom_nav_selector.xml" value="0.174" />
         <entry key="app/src/main/res/drawable/botton_nav_selector.xml" value="0.174" />
@@ -26,6 +30,7 @@
         <entry key="app/src/main/res/layout/fragment_project_list.xml" value="0.33177083333333335" />
         <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.3458333333333333" />
         <entry key="app/src/main/res/layout/item_add.xml" value="0.40389294403892945" />
+        <entry key="app/src/main/res/layout/item_project.xml" value="0.3458333333333333" />
         <entry key="app/src/main/res/layout/title_layout.xml" value="0.25" />
         <entry key="app/src/main/res/layout/toolbar.xml" value="0.3458333333333333" />
         <entry key="app/src/main/res/layout/toolbar_back.xml" value="0.3458333333333333" />

@@ -7,21 +7,24 @@ import andres.rangel.degreeprojects.Utils.Companion.imageUri
 import andres.rangel.degreeprojects.Utils.Companion.name
 import andres.rangel.degreeprojects.Utils.Companion.phone
 import andres.rangel.degreeprojects.databinding.ActivityMainBinding
+import android.Manifest
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Matrix
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.os.Environment
 import android.provider.MediaStore
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.exifinterface.media.ExifInterface
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
+import pub.devrel.easypermissions.EasyPermissions
 import java.io.ByteArrayOutputStream
 import java.io.File
 
@@ -119,6 +122,7 @@ class MainActivity : AppCompatActivity() {
                     "IMG_" + "profile",
                     null
                 )
+
                 imageUri = Uri.parse(path)
 
             }

@@ -47,5 +47,6 @@
     <string name="tools">Herramientas y tecnologías</string>
     <string name="email_one">Correo electrónico estudiante 1</string>
     <string name="email_two">Correo electrónico estudiante 2</string>
-    <string name="optional">Opcional</string>
+    <string name="optional">Si vas a desarollar este proyecto ingresa el correo de los participantes</string>
+    <string name="project_list">Lista de proyectos</string>
 </resources>
