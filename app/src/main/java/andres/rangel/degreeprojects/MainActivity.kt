@@ -8,6 +8,7 @@ import andres.rangel.degreeprojects.Utils.Companion.name
 import andres.rangel.degreeprojects.Utils.Companion.phone
 import andres.rangel.degreeprojects.databinding.ActivityMainBinding
 import android.Manifest
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Matrix
@@ -16,6 +17,7 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.exifinterface.media.ExifInterface
@@ -24,12 +26,14 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
+import pub.devrel.easypermissions.AppSettingsDialog
 import pub.devrel.easypermissions.EasyPermissions
+import timber.log.Timber
 import java.io.ByteArrayOutputStream
 import java.io.File
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var storage: FirebaseStorage
@@ -42,7 +46,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         getInfo()
-        getProfileImage()
+        if(Utils.hasStoragePermissions(this))
+            getProfileImage()
+        else
+            requestPermissions()
 
         setSupportActionBar(binding.bottomAppBar)
 
@@ -129,6 +136,41 @@ class MainActivity : AppCompatActivity() {
         } catch (e: Exception) {
             e.printStackTrace()
         }
+    }
+
+    private fun requestPermissions() {
+        if (Utils.hasStoragePermissions(this)) {
+            return
+        }
+        EasyPermissions.requestPermissions(
+            this,
+            "Debes aceptar permiso de almacenamiento",
+            0,
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+        )
+    }
+
+    override fun onPermissionsGranted(requestCode: Int, perms: MutableList<String>) {
+        Timber.e("Permissions granted")
+        getProfileImage()
+    }
+
+    override fun onPermissionsDenied(requestCode: Int, permissions: MutableList<String>) {
+        if (EasyPermissions.somePermissionPermanentlyDenied(this, permissions)) {
+            AppSettingsDialog.Builder(this).build().show()
+        } else {
+            requestPermissions()
+        }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this)
     }
 
     override fun onBackPressed() {

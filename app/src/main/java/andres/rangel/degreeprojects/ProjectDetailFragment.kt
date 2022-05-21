@@ -62,7 +62,7 @@ class ProjectDetailFragment : Fragment(R.layout.fragment_project_detail) {
             "description" to project.description,
             "emailOne" to email!!,
             "emailTwo" to binding.etEmailTwo.text.toString(),
-            "createBy" to project.createdBy,
+            "createdBy" to project.createdBy,
             "status" to project.status
         )
         firebase.getReference("projects").child(project.name).updateChildren(projectUpdate).addOnCompleteListener {
