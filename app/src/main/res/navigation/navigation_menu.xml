@@ -49,5 +49,9 @@
     <fragment
         android:id="@+id/projectDetailFragment"
         android:name="andres.rangel.degreeprojects.ProjectDetailFragment"
-        android:label="ProjectDetailFragment" />
+        android:label="ProjectDetailFragment" >
+        <argument
+            android:name="project"
+            app:argType="andres.rangel.degreeprojects.Project" />
+    </fragment>
 </navigation>

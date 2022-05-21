@@ -47,7 +47,7 @@ class NewProjectFragment : Fragment(R.layout.fragment_new_project) {
         val reference = firebase.reference
         val id = reference.push().key
         id?.let {
-            reference.child("projects").child(it).setValue(project).addOnSuccessListener {
+            reference.child("projects").child(project.name).setValue(project).addOnSuccessListener {
                 findNavController().navigateUp()
             }.addOnFailureListener {
                 Snackbar.make(binding.root, "Error al crear el proyecto", Snackbar.LENGTH_SHORT)

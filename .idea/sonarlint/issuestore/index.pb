@@ -3,8 +3,6 @@ X
 (gradle/wrapper/gradle-wrapper.properties,f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
 r
 Bapp/src/main/java/andres/rangel/degreeprojects/SettingsFragment.kt,c/d/cdc90ec4170474cc05390e95c9576243b4b40b16
-w
-Gapp/src/main/java/andres/rangel/degreeprojects/ProjectDetailFragment.kt,7/f/7f5f97d8cbc94b8cbd715857ce7c06b1fceb19aa
 ?
 settings.gradle,0/5/05efc8b1657769a27696d478ded1e95f38737233
 A
@@ -25,8 +23,6 @@ r
 Bapp/src/main/java/andres/rangel/degreeprojects/RegisterActivity.kt,6/0/604d235dfaf0e1725a53830ba6df349b9832da9f
 t
 Dapp/src/main/java/andres/rangel/degreeprojects/CheckEmailActivity.kt,a/1/a1495a0456b6cef02bda1d58c6ea0ba3708da394
-q
-Aapp/src/main/java/andres/rangel/degreeprojects/ProfileFragment.kt,a/d/adb7787c9e8202ccb9ab6beb368b6d83d2a617ad
 @
 app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
 P

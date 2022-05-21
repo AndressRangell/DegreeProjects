@@ -49,4 +49,7 @@
     <string name="email_two">Correo electrónico estudiante 2</string>
     <string name="optional">Si vas a desarollar este proyecto ingresa el correo de los participantes</string>
     <string name="project_list">Lista de proyectos</string>
+    <string name="responsibles">Responsables</string>
+    <string name="project_details">Detalles del proyecto</string>
+    <string name="take_proyect">Tomar proyecto</string>
 </resources>
