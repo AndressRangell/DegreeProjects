@@ -7,12 +7,116 @@
     tools:context=".HomeFragment">
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/tvName"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="HomeFragment"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="30dp"
+        android:fontFamily="@font/silka"
+        android:text="Hola Andrés"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/circle_image_view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="15dp"
+        android:fontFamily="@font/silka"
+        android:text="DegreeProjects UTS"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/circle_image_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvName" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circle_image_view"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:civ_border_width="1dp"
+        app:civ_border_color="@color/accent_three"
+        android:layout_margin="30dp"
+        android:contentDescription="@string/description_no_available"
+        android:src="@drawable/ic_default_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgHeader"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWelcome"
+        android:contentDescription="@string/description_no_available" />
+
+    <TextView
+        android:id="@+id/tvTitleMyProyect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="30dp"
+        android:text="Mi proyecto"
+        android:textStyle="bold"
+        android:fontFamily="@font/silka"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgHeader" />
+
+    <LinearLayout
+        android:id="@+id/linearItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/background_card_one"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleMyProyect">
+
+        <TextView
+            android:id="@+id/tvNameProject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="45dp"
+            android:fontFamily="@font/silka"
+            android:text="Control de inventario para tiendas"
+            android:textStyle="bold"
+            android:textColor="@color/text_white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="40dp"
+            android:text="Esta aplicación llevará un control financiero del negocio y la información de proveedores"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/silka"
+            android:textColor="@color/text_white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="end"
+            android:textStyle="bold"
+            android:text="Estado: en desarrollo"
+            android:fontFamily="@font/silka"
+            android:textColor="@color/text_white"
+            android:textSize="14sp" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

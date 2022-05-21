@@ -1,8 +1,8 @@
 package andres.rangel.degreeprojects
 
 import andres.rangel.degreeprojects.Utils.Companion.email
-import andres.rangel.degreeprojects.Utils.Companion.name
 import andres.rangel.degreeprojects.databinding.FragmentNewProjectBinding
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -34,40 +34,39 @@ class NewProjectFragment : Fragment(R.layout.fragment_new_project) {
                 email.toString(),
                 StatusProject.UNAPPROVED
             )
-            val result = validateFields(project)
-            if (result == "OK") {
+            if (project.emailOne.isNotEmpty())
+                firestore.collection("users").document(project.emailOne).get().addOnCompleteListener {
+                    if(!it.result.exists()) project.emailOne = "Error"
+                }
+            if (project.emailTwo.isNotEmpty())
+                firestore.collection("users").document(project.emailTwo).get().addOnCompleteListener {
+                    if(!it.result.exists()) project.emailTwo = "Error"
+                }
+            val builder: AlertDialog.Builder = AlertDialog.Builder(requireContext())
+            builder.setMessage("El proyecto llegará a los profesores del comité para su aprobación").setPositiveButton("Aceptar") { dialog, _ ->
                 createProject(project)
-            } else {
-                Snackbar.make(binding.root, result, Snackbar.LENGTH_SHORT).show()
+                dialog.dismiss()
             }
+            builder.show()
         }
     }
 
     private fun createProject(project: Project) {
-        val reference = firebase.reference
-        val id = reference.push().key
-        id?.let {
+        val result = validateFields(project)
+        if (result == "OK") {
+            val reference = firebase.reference
             reference.child("projects").child(project.name).setValue(project).addOnSuccessListener {
                 findNavController().navigateUp()
             }.addOnFailureListener {
                 Snackbar.make(binding.root, "Error al crear el proyecto", Snackbar.LENGTH_SHORT)
                     .show()
             }
+        } else {
+            Snackbar.make(binding.root, result, Snackbar.LENGTH_SHORT).show()
         }
     }
 
     private fun validateFields(project: Project): String {
-        var emailOneValid = true
-        var emailTwoValid = true
-        if (project.emailOne.isNotEmpty())
-            firestore.collection("users").document(project.emailOne).get().addOnCompleteListener {
-                if(!it.result.exists()) emailOneValid = false
-            }
-        if (project.emailTwo.isNotEmpty())
-            firestore.collection("users").document(project.emailTwo).get().addOnCompleteListener {
-                if(!it.result.exists()) emailTwoValid = false
-            }
-
         return when {
             project.name.isEmpty() || project.tools.isEmpty() || project.description.isEmpty() ->
                 "Debes llenar todos los campos"
@@ -77,7 +76,7 @@ class NewProjectFragment : Fragment(R.layout.fragment_new_project) {
                 "Escribe por lo menos 3 herramientas separadas con coma: a, b, c"
             project.description.length < 80 ->
                 "Ingresa una descripción mas detallada sobre el proyecto"
-            !emailOneValid || !emailTwoValid ->
+            project.emailOne == "Error" || project.emailTwo == "Error"->
                 "Los correos de los participantes deben estar registrados"
             else -> "OK"
         }

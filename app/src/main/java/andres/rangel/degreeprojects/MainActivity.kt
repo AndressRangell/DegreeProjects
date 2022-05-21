@@ -8,16 +8,12 @@ import andres.rangel.degreeprojects.Utils.Companion.name
 import andres.rangel.degreeprojects.Utils.Companion.phone
 import andres.rangel.degreeprojects.databinding.ActivityMainBinding
 import android.Manifest
-import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Matrix
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
-import android.os.Environment
 import android.provider.MediaStore
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.exifinterface.media.ExifInterface
@@ -31,7 +27,6 @@ import pub.devrel.easypermissions.EasyPermissions
 import timber.log.Timber
 import java.io.ByteArrayOutputStream
 import java.io.File
-
 
 class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
 
@@ -64,7 +59,7 @@ class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
         binding.navigationHostFragment.getFragment<NavHostFragment>().navController
             .addOnDestinationChangedListener { _, destination, _ ->
                 when (destination.id) {
-                    R.id.homeFragment, R.id.projectListFragment, R.id.settingsFragment, R.id.profileFragment -> {
+                    R.id.homeFragment, R.id.projectListFragment, R.id.profileFragment -> {
                         binding.bottomAppBar.visibility = View.VISIBLE
                     }
                     else -> {
@@ -181,8 +176,6 @@ class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
         when(currentDestination) {
             "ProjectListFragment" -> binding.navigationHostFragment.getFragment<NavHostFragment>()
                 .navController.navigate(R.id.action_projectListFragment_to_homeFragment)
-            "SettingsFragment" -> binding.navigationHostFragment.getFragment<NavHostFragment>()
-                .navController.navigate(R.id.action_settingsFragment_to_homeFragment)
             "ProfileFragment" -> binding.navigationHostFragment.getFragment<NavHostFragment>()
                 .navController.navigate(R.id.action_profileFragment_to_homeFragment)
             "HomeFragment" -> finish()

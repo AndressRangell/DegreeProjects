@@ -9,11 +9,13 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.FirebaseFirestore
 
 class ProjectDetailFragment : Fragment(R.layout.fragment_project_detail) {
 
     private lateinit var binding: FragmentProjectDetailBinding
     private lateinit var firebase: FirebaseDatabase
+    private lateinit var firestore: FirebaseFirestore
     private val arguments: ProjectDetailFragmentArgs by navArgs()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -21,6 +23,7 @@ class ProjectDetailFragment : Fragment(R.layout.fragment_project_detail) {
         binding = FragmentProjectDetailBinding.bind(view)
 
         firebase = FirebaseDatabase.getInstance()
+        firestore = FirebaseFirestore.getInstance()
         val project = arguments.project
 
         binding.apply {
@@ -34,20 +37,34 @@ class ProjectDetailFragment : Fragment(R.layout.fragment_project_detail) {
                 StatusProject.DEVELOPING -> "Estado: en desarrollo"
                 StatusProject.FINISHED -> "Estado: Finalizado"
             }
-            if(project.emailOne.isEmpty() && project.emailTwo.isEmpty()) {
+            if (project.emailOne.isEmpty() && project.emailTwo.isEmpty()) {
                 tvEmailOne.visibility = View.GONE
                 tvEmailTwo.visibility = View.GONE
                 etEmailTwo.visibility = View.VISIBLE
                 btnTakeProject.visibility = View.VISIBLE
-            }else{
+            } else {
                 tvEmailOne.text = project.emailOne
                 tvEmailTwo.text = project.emailTwo
             }
+            if (project.emailTwo.isNotEmpty())
+                firestore.collection("users").document(project.emailTwo).get()
+                    .addOnCompleteListener {
+                        if (!it.result.exists()) project.emailTwo = "Error"
+                    }
             btnTakeProject.setOnClickListener {
                 val builder: AlertDialog.Builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("¿Seguro que quieres desarrollar este proyecto?").setPositiveButton("Si") { _, _ ->
-                    updateProject(project)
-                }.setNegativeButton("Cancelar") { dialog, _ ->
+                builder.setMessage("¿Seguro que quieres desarrollar este proyecto?")
+                    .setPositiveButton("Si") { _, _ ->
+                        if (project.emailTwo == "Error") {
+                            Snackbar.make(
+                                root,
+                                "Los correos de los participantes deben estar registrados",
+                                Snackbar.LENGTH_SHORT
+                            ).show()
+                        } else {
+                            updateProject(project)
+                        }
+                    }.setNegativeButton("Cancelar") { dialog, _ ->
                     dialog.dismiss()
                 }
                 builder.show()
@@ -65,22 +82,35 @@ class ProjectDetailFragment : Fragment(R.layout.fragment_project_detail) {
             "createdBy" to project.createdBy,
             "status" to project.status
         )
-        firebase.getReference("projects").child(project.name).updateChildren(projectUpdate).addOnCompleteListener {
-            if(it.isSuccessful) {
-                binding.apply {
-                    tvEmailOne.visibility = View.VISIBLE
-                    tvEmailTwo.visibility = View.VISIBLE
-                    etEmailTwo.visibility = View.GONE
-                    btnTakeProject.visibility = View.GONE
-                    tvEmailOne.text = email!!
-                    tvEmailTwo.text = binding.etEmailTwo.text.toString()
-                    Snackbar.make(root, "El proyecto se ha actualizado con éxito", Snackbar.LENGTH_SHORT).show()
+        firebase.getReference("projects").child(project.name).updateChildren(projectUpdate)
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    binding.apply {
+                        tvEmailOne.visibility = View.VISIBLE
+                        tvEmailTwo.visibility = View.VISIBLE
+                        etEmailTwo.visibility = View.GONE
+                        btnTakeProject.visibility = View.GONE
+                        tvEmailOne.text = email!!
+                        tvEmailTwo.text = binding.etEmailTwo.text.toString()
+                        Snackbar.make(
+                            root,
+                            "El proyecto se ha actualizado con éxito",
+                            Snackbar.LENGTH_SHORT
+                        ).show()
+                    }
+                } else {
+                    Snackbar.make(
+                        binding.root,
+                        "Error al actualizar el proyecto",
+                        Snackbar.LENGTH_SHORT
+                    ).show()
                 }
-            }else {
-                Snackbar.make(binding.root, "Error al actualizar el proyecto", Snackbar.LENGTH_SHORT).show()
-            }
-        }.addOnFailureListener {
-            Snackbar.make(binding.root, "Error al conectar con la base de datos", Snackbar.LENGTH_SHORT).show()
+            }.addOnFailureListener {
+            Snackbar.make(
+                binding.root,
+                "Error al conectar con la base de datos",
+                Snackbar.LENGTH_SHORT
+            ).show()
         }
     }
 }

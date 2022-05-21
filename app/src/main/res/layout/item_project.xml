@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="15dp">
@@ -25,7 +24,7 @@
             android:fontFamily="@font/silka"
             android:textStyle="bold"
             android:textColor="@color/text_white"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/tvDescription"
@@ -35,7 +34,7 @@
             android:layout_marginTop="5dp"
             android:fontFamily="@font/silka"
             android:textColor="@color/text_white"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/tvStatus"
@@ -46,7 +45,7 @@
             android:textStyle="bold"
             android:fontFamily="@font/silka"
             android:textColor="@color/text_white"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
 
     </LinearLayout>
 
