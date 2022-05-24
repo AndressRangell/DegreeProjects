@@ -2,9 +2,8 @@
     <item>
         <shape
             android:shape="rectangle">
-            <gradient
-                android:endColor="@color/accent_two"
-                android:startColor="@color/accent_one" />
+            <solid
+                android:color="@color/text_black"/>
         </shape>
     </item>
 </selector>

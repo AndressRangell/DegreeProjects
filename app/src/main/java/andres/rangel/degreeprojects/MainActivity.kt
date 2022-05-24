@@ -81,6 +81,8 @@ class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
             phone = it.get("phone")?.toString()
             career = it.get("career")?.toString()
         }
+
+
     }
 
     private fun getProfileImage() {

@@ -46,10 +46,6 @@ class ProjectsAdapter : RecyclerView.Adapter<ProjectsAdapter.ProjectsViewHolder>
                     StatusProject.DEVELOPING -> "Estado: en desarrollo"
                     StatusProject.FINISHED -> "Estado: Finalizado"
                 }
-                if (position % 2 == 0)
-                    linearItem.setBackgroundResource(R.drawable.background_card_one)
-                else
-                    linearItem.setBackgroundResource(R.drawable.background_card_two)
             }
 
             setOnClickListener {

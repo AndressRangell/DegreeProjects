@@ -60,7 +60,6 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             btnLogout.setOnClickListener {
                 if (switchEditable.isChecked) {
                     saveData()
-                    switchEditable.isChecked = false
                 } else {
                     signOut()
                 }
@@ -82,7 +81,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                 document = binding.etDocument.text.toString()
                 phone = binding.etPhone.text.toString()
                 career = binding.etCareer.text.toString()
-                chargeData()
+                binding.switchEditable.isChecked = false
             }
         }
     }

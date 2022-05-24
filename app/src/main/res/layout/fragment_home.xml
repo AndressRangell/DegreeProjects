@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
         android:fontFamily="@font/silka"
-        android:text="Hola Andrés"
+        android:text="@string/welcome"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/circle_image_view"
@@ -26,7 +26,7 @@
         android:layout_marginHorizontal="30dp"
         android:layout_marginVertical="15dp"
         android:fontFamily="@font/silka"
-        android:text="DegreeProjects UTS"
+        android:text="@string/degreeprojects_uts"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/circle_image_view"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,30 +44,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imgHeader"
+    <TextView
+        android:id="@+id/separator"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_height="5dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/accent_one"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWelcome"
-        android:contentDescription="@string/description_no_available" />
+        app:layout_constraintTop_toBottomOf="@+id/tvWelcome"/>
 
     <TextView
         android:id="@+id/tvTitleMyProyect"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:layout_marginHorizontal="30dp"
-        android:text="Mi proyecto"
+        android:text="@string/my_project"
         android:textStyle="bold"
         android:fontFamily="@font/silka"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgHeader" />
+        app:layout_constraintTop_toBottomOf="@+id/separator" />
 
     <LinearLayout
         android:id="@+id/linearItem"
@@ -76,7 +75,7 @@
         android:orientation="vertical"
         android:layout_marginHorizontal="30dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/background_card_one"
+        android:background="@drawable/background_card"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -87,9 +86,8 @@
             android:id="@+id/tvNameProject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxHeight="45dp"
+            android:maxHeight="40dp"
             android:fontFamily="@font/silka"
-            android:text="Control de inventario para tiendas"
             android:textStyle="bold"
             android:textColor="@color/text_white"
             android:textSize="16sp" />
@@ -98,8 +96,7 @@
             android:id="@+id/tvDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxHeight="40dp"
-            android:text="Esta aplicación llevará un control financiero del negocio y la información de proveedores"
+            android:maxHeight="36dp"
             android:layout_marginTop="5dp"
             android:fontFamily="@font/silka"
             android:textColor="@color/text_white"
@@ -112,11 +109,35 @@
             android:layout_marginTop="5dp"
             android:gravity="end"
             android:textStyle="bold"
-            android:text="Estado: en desarrollo"
             android:fontFamily="@font/silka"
             android:textColor="@color/text_white"
             android:textSize="14sp" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvInstalations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginHorizontal="30dp"
+        android:text="@string/instalatinos"
+        android:textStyle="bold"
+        android:fontFamily="@font/silka"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearItem" />
+
+    <ImageView
+        android:id="@+id/imgHeader"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvInstalations"
+        android:contentDescription="@string/description_no_available" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

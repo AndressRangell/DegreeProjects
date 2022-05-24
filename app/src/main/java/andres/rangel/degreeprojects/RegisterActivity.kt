@@ -91,7 +91,10 @@ class RegisterActivity : AppCompatActivity() {
 
         firestore.collection("users").document(email).set(
             hashMapOf(
-                "name" to binding.etName.text.toString()
+                "name" to binding.etName.text.toString(),
+                "document" to "",
+                "phone" to "",
+                "career" to ""
             )
         )
     }

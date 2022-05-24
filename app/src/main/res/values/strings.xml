@@ -52,4 +52,8 @@
     <string name="responsibles">Responsables</string>
     <string name="project_details">Detalles del proyecto</string>
     <string name="take_proyect">Tomar proyecto</string>
+    <string name="welcome">Bienvenido!!</string>
+    <string name="degreeprojects_uts">DegreeProjects UTS</string>
+    <string name="my_project">Mi proyecto</string>
+    <string name="instalatinos">Instalaciones</string>
 </resources>

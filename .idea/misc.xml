@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/background.xml" value="0.226" />
+        <entry key="app/src/main/res/drawable/background_card.xml" value="0.1845" />
         <entry key="app/src/main/res/drawable/background_card_accent_four.xml" value="0.1845" />
         <entry key="app/src/main/res/drawable/background_card_accent_three.xml" value="0.1845" />
         <entry key="app/src/main/res/drawable/background_card_one.xml" value="0.1845" />
