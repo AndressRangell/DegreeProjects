@@ -14,6 +14,7 @@ class Utils {
         var document: String? = null
         var phone: String? = null
         var career: String? = null
+        var projectAssigned: Boolean = false
 
         fun hasStoragePermissions(context: Context) =
             EasyPermissions.hasPermissions(

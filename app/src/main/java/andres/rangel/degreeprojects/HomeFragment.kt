@@ -1,5 +1,6 @@
 package andres.rangel.degreeprojects
 
+import andres.rangel.degreeprojects.Utils.Companion.projectAssigned
 import andres.rangel.degreeprojects.Utils.Companion.email
 import andres.rangel.degreeprojects.Utils.Companion.imageUri
 import andres.rangel.degreeprojects.Utils.Companion.name
@@ -31,7 +32,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             .into(binding.imgHeader)
 
         binding.apply {
-            binding.circleImageView.setImageURI(imageUri)
             name?.let { tvName.text = "Hola ${it.split(" ").first()}" }
             binding.linearItem.setOnClickListener {
                 val bundle = Bundle().apply {
@@ -50,10 +50,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private fun getInfo() {
         reference = FirebaseDatabase.getInstance().getReference("projects")
         reference.get().addOnCompleteListener {
-            if (it.isSuccessful){
-                for(data in it.result.children) {
+            if (it.isSuccessful) {
+                for (data in it.result.children) {
                     val item = data.getValue(Project::class.java) as Project
-                    if(item.emailOne == email || item.emailTwo == email) {
+                    if (item.emailOne == email || item.emailTwo == email) {
+                        projectAssigned = true
                         project = item
                         binding.apply {
                             tvNameProject.text = item.name
@@ -63,12 +64,17 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                                 StatusProject.FREE -> "Estado: libre"
                                 StatusProject.ASSIGNED -> "Estado: asignado"
                                 StatusProject.DEVELOPING -> "Estado: en desarrollo"
-                                StatusProject.FINISHED -> "Estado: Finalizado"
+                                StatusProject.FINISHED -> "Estado: finalizado"
                             }
                         }
+                    } else {
+                        binding.linearItem.visibility = View.GONE
                     }
                 }
             }
+            binding.circleImageView.setImageURI(imageUri)
+        }.addOnFailureListener {
+            binding.circleImageView.setImageURI(imageUri)
         }
     }
 

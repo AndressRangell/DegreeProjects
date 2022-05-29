@@ -25,57 +25,85 @@
             android:textColor="@color/text_black"
             android:textSize="24sp" />
 
-        <TextView
+        <EditText
             android:id="@+id/tvNameProject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:maxHeight="70dp"
             android:textStyle="bold"
-            android:background="@drawable/item_background"
+            android:focusableInTouchMode="false"
+            android:background="@drawable/shape_field"
             android:fontFamily="@font/silka"
             android:padding="16dp"
             android:textSize="16sp"
-            tools:ignore="Autofill" />
+            tools:ignore="Autofill,LabelFor"
+            android:inputType="text" />
 
-        <TextView
+        <EditText
             android:id="@+id/tvTools"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:maxHeight="70dp"
-            android:background="@drawable/item_background"
+            android:focusableInTouchMode="false"
+            android:background="@drawable/shape_field"
             android:fontFamily="@font/silka"
             android:padding="16dp"
             android:textSize="16sp"
-            tools:ignore="Autofill" />
+            tools:ignore="Autofill,LabelFor"
+            android:inputType="text" />
 
-        <TextView
+        <EditText
             android:id="@+id/tvDescriptionProject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxHeight="110dp"
             android:layout_marginTop="15dp"
-            android:background="@drawable/item_background"
+            android:focusableInTouchMode="false"
+            android:background="@drawable/shape_field"
             android:fontFamily="@font/silka"
             android:gravity="start"
             android:padding="16dp"
             android:textSize="16sp"
-            tools:ignore="Autofill" />
+            tools:ignore="Autofill,LabelFor"
+            android:inputType="textMultiLine" />
 
-        <TextView
+        <EditText
             android:id="@+id/tvStatus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxHeight="110dp"
             android:layout_marginTop="15dp"
             android:textStyle="bold"
-            android:background="@drawable/item_background"
+            android:focusableInTouchMode="false"
+            android:background="@drawable/shape_field"
             android:fontFamily="@font/silka"
             android:gravity="start"
             android:padding="16dp"
             android:textSize="16sp"
-            tools:ignore="Autofill" />
+            tools:ignore="Autofill,LabelFor"
+            android:inputType="text" />
+
+        <LinearLayout
+            android:id="@+id/linearSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_field"
+            android:visibility="gone"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:fontFamily="@font/silka"
+                android:gravity="start"
+                android:padding="16dp"
+                android:textSize="16sp" />
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -86,27 +114,31 @@
             android:text="@string/responsibles"
             android:textSize="16sp" />
 
-        <TextView
+        <EditText
             android:id="@+id/tvEmailOne"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:background="@drawable/item_background"
+            android:focusableInTouchMode="false"
+            android:background="@drawable/shape_field"
             android:fontFamily="@font/silka"
             android:padding="16dp"
             android:textSize="16sp"
-            tools:ignore="Autofill" />
+            tools:ignore="Autofill,LabelFor"
+            android:inputType="textEmailAddress" />
 
-        <TextView
+        <EditText
             android:id="@+id/tvEmailTwo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:background="@drawable/item_background"
+            android:focusableInTouchMode="false"
+            android:background="@drawable/shape_field"
             android:fontFamily="@font/silka"
             android:padding="16dp"
             android:textSize="16sp"
-            tools:ignore="Autofill" />
+            tools:ignore="Autofill,LabelFor"
+            android:inputType="textEmailAddress" />
 
         <EditText
             android:id="@+id/etEmailTwo"
@@ -121,6 +153,16 @@
             android:padding="16dp"
             android:textSize="16sp"
             tools:ignore="Autofill" />
+
+        <TextView
+            android:id="@+id/tvCreateBy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/silka"
+            android:paddingHorizontal="10dp"
+            android:text="@string/contact"
+            android:textSize="16sp" />
 
     </LinearLayout>
 
@@ -137,6 +179,24 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         android:text="@string/take_proyect"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_button"
+        android:fontFamily="@font/silka"
+        android:layout_marginBottom="30dp"
+        android:visibility="gone"
+        android:paddingLeft="64dp"
+        android:paddingRight="64dp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:text="@string/updateProject"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -56,4 +56,7 @@
     <string name="degreeprojects_uts">DegreeProjects UTS</string>
     <string name="my_project">Mi proyecto</string>
     <string name="instalatinos">Instalaciones</string>
+    <string name="contact">"Contacto: "</string>
+    <string name="updateProject">Actualizar proyecto</string>
+    <string name="no_project">No tienes ningún proyecto asignado</string>
 </resources>

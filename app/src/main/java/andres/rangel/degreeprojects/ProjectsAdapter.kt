@@ -44,7 +44,7 @@ class ProjectsAdapter : RecyclerView.Adapter<ProjectsAdapter.ProjectsViewHolder>
                     StatusProject.FREE -> "Estado: libre"
                     StatusProject.ASSIGNED -> "Estado: asignado"
                     StatusProject.DEVELOPING -> "Estado: en desarrollo"
-                    StatusProject.FINISHED -> "Estado: Finalizado"
+                    StatusProject.FINISHED -> "Estado: finalizado"
                 }
             }
 
