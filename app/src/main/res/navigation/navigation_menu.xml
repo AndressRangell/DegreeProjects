@@ -51,6 +51,6 @@
         android:label="ProjectDetailFragment" >
         <argument
             android:name="project"
-            app:argType="andres.rangel.degreeprojects.Project" />
+            app:argType="andres.rangel.degreeprojects.models.Project" />
     </fragment>
 </navigation>
