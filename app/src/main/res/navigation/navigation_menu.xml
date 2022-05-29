@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="andres.rangel.degreeprojects.HomeFragment"
+        android:name="andres.rangel.degreeprojects.ui.fragments.HomeFragment"
         android:label="HomeFragment">
         <action
             android:id="@+id/action_homeFragment_to_projectDetailFragment"
@@ -14,11 +14,11 @@
     </fragment>
     <fragment
         android:id="@+id/newProjectFragment"
-        android:name="andres.rangel.degreeprojects.NewProjectFragment"
+        android:name="andres.rangel.degreeprojects.ui.fragments.NewProjectFragment"
         android:label="NewProjectFragment"/>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="andres.rangel.degreeprojects.ProfileFragment"
+        android:name="andres.rangel.degreeprojects.ui.fragments.ProfileFragment"
         android:label="ProfileFragment">
         <action
             android:id="@+id/action_profileFragment_to_homeFragment"
@@ -29,7 +29,7 @@
     </fragment>
     <fragment
         android:id="@+id/projectListFragment"
-        android:name="andres.rangel.degreeprojects.ProjectListFragment"
+        android:name="andres.rangel.degreeprojects.ui.fragments.ProjectListFragment"
         android:label="ProjectListFragment">
         <action
             android:id="@+id/action_projectListFragment_to_projectDetailFragment"
@@ -43,11 +43,11 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="andres.rangel.degreeprojects.SettingsFragment"
+        android:name="andres.rangel.degreeprojects.ui.fragments.SettingsFragment"
         android:label="SettingsFragment" />
     <fragment
         android:id="@+id/projectDetailFragment"
-        android:name="andres.rangel.degreeprojects.ProjectDetailFragment"
+        android:name="andres.rangel.degreeprojects.ui.fragments.ProjectDetailFragment"
         android:label="ProjectDetailFragment" >
         <argument
             android:name="project"

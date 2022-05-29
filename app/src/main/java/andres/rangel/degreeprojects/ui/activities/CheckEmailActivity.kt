@@ -1,4 +1,4 @@
-package andres.rangel.degreeprojects
+package andres.rangel.degreeprojects.ui.activities
 
 import andres.rangel.degreeprojects.databinding.ActivityCheckEmailBinding
 import android.content.Intent

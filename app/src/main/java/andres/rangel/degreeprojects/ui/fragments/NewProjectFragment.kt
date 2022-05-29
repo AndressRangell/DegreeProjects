@@ -1,6 +1,9 @@
-package andres.rangel.degreeprojects
+package andres.rangel.degreeprojects.ui.fragments
 
-import andres.rangel.degreeprojects.Utils.Companion.email
+import andres.rangel.degreeprojects.models.Project
+import andres.rangel.degreeprojects.R
+import andres.rangel.degreeprojects.models.StatusProject
+import andres.rangel.degreeprojects.utils.Utils.Companion.email
 import andres.rangel.degreeprojects.databinding.FragmentNewProjectBinding
 import android.app.AlertDialog
 import android.os.Bundle

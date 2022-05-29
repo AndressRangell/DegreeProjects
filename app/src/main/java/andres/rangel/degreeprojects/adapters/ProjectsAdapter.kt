@@ -1,6 +1,9 @@
-package andres.rangel.degreeprojects
+package andres.rangel.degreeprojects.adapters
 
+import andres.rangel.degreeprojects.R
 import andres.rangel.degreeprojects.databinding.ItemProjectBinding
+import andres.rangel.degreeprojects.models.Project
+import andres.rangel.degreeprojects.models.StatusProject
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

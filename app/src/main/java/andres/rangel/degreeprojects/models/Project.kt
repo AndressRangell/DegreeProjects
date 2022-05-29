@@ -1,4 +1,4 @@
-package andres.rangel.degreeprojects
+package andres.rangel.degreeprojects.models
 
 import java.io.Serializable
 

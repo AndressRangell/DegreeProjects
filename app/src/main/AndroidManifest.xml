@@ -16,37 +16,37 @@
         android:theme="@style/Theme.DegreeProjects"
         android:requestLegacyExternalStorage="true">
         <activity
-            android:name=".UpdatePasswordActivity"
+            android:name=".ui.activities.UpdatePasswordActivity"
             android:exported="false"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".CheckEmailActivity"
+            android:name=".ui.activities.CheckEmailActivity"
             android:exported="false"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".AccountRecoveryActivity"
+            android:name=".ui.activities.AccountRecoveryActivity"
             android:exported="false"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity"/>
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.activities.MainActivity"
             android:exported="false"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity"/>
         <activity
-            android:name=".RegisterActivity"
+            android:name=".ui.activities.RegisterActivity"
             android:exported="false"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.activities.LoginActivity"
             android:exported="true"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"

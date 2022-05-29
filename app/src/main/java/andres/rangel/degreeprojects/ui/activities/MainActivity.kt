@@ -1,11 +1,13 @@
-package andres.rangel.degreeprojects
+package andres.rangel.degreeprojects.ui.activities
 
-import andres.rangel.degreeprojects.Utils.Companion.career
-import andres.rangel.degreeprojects.Utils.Companion.document
-import andres.rangel.degreeprojects.Utils.Companion.email
-import andres.rangel.degreeprojects.Utils.Companion.imageUri
-import andres.rangel.degreeprojects.Utils.Companion.name
-import andres.rangel.degreeprojects.Utils.Companion.phone
+import andres.rangel.degreeprojects.R
+import andres.rangel.degreeprojects.utils.Utils
+import andres.rangel.degreeprojects.utils.Utils.Companion.career
+import andres.rangel.degreeprojects.utils.Utils.Companion.document
+import andres.rangel.degreeprojects.utils.Utils.Companion.email
+import andres.rangel.degreeprojects.utils.Utils.Companion.imageUri
+import andres.rangel.degreeprojects.utils.Utils.Companion.name
+import andres.rangel.degreeprojects.utils.Utils.Companion.phone
 import andres.rangel.degreeprojects.databinding.ActivityMainBinding
 import android.Manifest
 import android.graphics.Bitmap

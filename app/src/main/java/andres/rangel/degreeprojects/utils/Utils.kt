@@ -1,4 +1,4 @@
-package andres.rangel.degreeprojects
+package andres.rangel.degreeprojects.utils
 
 import android.Manifest
 import android.content.Context

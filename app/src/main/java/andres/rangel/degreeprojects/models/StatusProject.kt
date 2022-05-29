@@ -1,4 +1,4 @@
-package andres.rangel.degreeprojects
+package andres.rangel.degreeprojects.models
 
 enum class StatusProject {
     UNAPPROVED,

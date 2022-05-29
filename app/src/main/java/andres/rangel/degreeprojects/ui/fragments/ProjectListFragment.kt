@@ -1,5 +1,8 @@
-package andres.rangel.degreeprojects
+package andres.rangel.degreeprojects.ui.fragments
 
+import andres.rangel.degreeprojects.models.Project
+import andres.rangel.degreeprojects.adapters.ProjectsAdapter
+import andres.rangel.degreeprojects.R
 import andres.rangel.degreeprojects.databinding.FragmentProjectListBinding
 import android.os.Bundle
 import android.view.View
