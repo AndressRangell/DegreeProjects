@@ -215,6 +215,7 @@ class ProjectDetailFragment : Fragment(R.layout.fragment_project_detail) {
             tvStatus.visibility = View.GONE
             linearSpinner.visibility = View.VISIBLE
             btnUpdate.visibility = View.VISIBLE
+            btnDelete.visibility = View.VISIBLE
         }
     }
 
