@@ -167,6 +167,41 @@ class ProjectDetailFragment : Fragment(R.layout.fragment_project_detail) {
                     updateProject(updateProject)
                 }
             }
+            btnDelete.setOnClickListener {
+                val builder: AlertDialog.Builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("¿Está seguro que quiere eliminar el proyecto?")
+                    .setPositiveButton("Aceptar") { _, _ ->
+                        deleteProject(project)
+                    }.setNegativeButton("Cancelar") { dialog, _ ->
+                        dialog.dismiss()
+                    }
+                builder.show()
+            }
+        }
+    }
+
+    private fun deleteProject(project: Project) {
+        val reference = firebase.reference.child("projects").child(project.name)
+        reference.removeValue().addOnCompleteListener {
+            if (it.isSuccessful) {
+                Snackbar.make(
+                    binding.root,
+                    "El proyecto se eliminó correctamente",
+                    Snackbar.LENGTH_SHORT
+                ).show()
+            } else {
+                Snackbar.make(
+                    binding.root,
+                    "Error al eliminar el proyecto",
+                    Snackbar.LENGTH_SHORT
+                ).show()
+            }
+        }.addOnFailureListener {
+            Snackbar.make(
+                binding.root,
+                "Algo salió mal, inténtalo de nuevo",
+                Snackbar.LENGTH_SHORT
+            ).show()
         }
     }
 

@@ -24,7 +24,7 @@ class UpdatePasswordActivity : AppCompatActivity() {
         auth = Firebase.auth
 
         val passwordRegex = Pattern.compile("^" +
-                "(?=.*[-@#$%^/&+=])" +     // Al menos 1 carácter especial
+                "(?=.*[-@#$%^*/&+=])" +     // Al menos 1 carácter especial
                 ".{6,}" +                // Al menos 6 caracteres
                 "$")
 

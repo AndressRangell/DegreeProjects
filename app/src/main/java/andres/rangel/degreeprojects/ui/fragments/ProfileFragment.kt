@@ -9,6 +9,7 @@ import andres.rangel.degreeprojects.utils.Utils.Companion.name
 import andres.rangel.degreeprojects.utils.Utils.Companion.phone
 import andres.rangel.degreeprojects.databinding.FragmentProfileBinding
 import andres.rangel.degreeprojects.ui.activities.LoginActivity
+import andres.rangel.degreeprojects.ui.activities.UpdatePasswordActivity
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
@@ -65,6 +66,10 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                 } else {
                     signOut()
                 }
+            }
+
+            tvUpdatePassword.setOnClickListener {
+                startActivity(Intent(requireContext(), UpdatePasswordActivity::class.java))
             }
         }
     }

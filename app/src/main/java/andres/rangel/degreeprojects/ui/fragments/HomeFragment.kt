@@ -53,7 +53,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private fun getInfo() {
         reference = FirebaseDatabase.getInstance().getReference("projects")
         reference.get().addOnCompleteListener {
-            if (it.isSuccessful) {
+            if (it.isSuccessful && it.result.children.count() > 0) {
                 for (data in it.result.children) {
                     val item = data.getValue(Project::class.java) as Project
                     if (item.emailOne == email || item.emailTwo == email) {
@@ -74,6 +74,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                         binding.linearItem.visibility = View.GONE
                     }
                 }
+            }else {
+                binding.linearItem.visibility = View.GONE
             }
             binding.circleImageView.setImageURI(imageUri)
         }.addOnFailureListener {
