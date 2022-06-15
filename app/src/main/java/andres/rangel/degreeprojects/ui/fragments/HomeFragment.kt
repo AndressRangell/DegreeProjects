@@ -57,6 +57,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 for (data in it.result.children) {
                     val item = data.getValue(Project::class.java) as Project
                     if (item.emailOne == email || item.emailTwo == email) {
+                        binding.linearItem.visibility = View.VISIBLE
                         projectAssigned = true
                         project = item
                         binding.apply {

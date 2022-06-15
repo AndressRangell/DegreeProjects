@@ -11,8 +11,6 @@ H
 build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
 €
 Papp/src/androidTest/java/andres/rangel/degreeprojects/ExampleInstrumentedTest.kt,8/8/8878b060858ff644cdecf14d3c549db68d9dc442
-z
-Japp/src/main/java/andres/rangel/degreeprojects/adapters/ProjectsAdapter.kt,f/0/f00409bd11baadcd54a213d7e8fff872d9dad36e
 
 Oapp/src/main/java/andres/rangel/degreeprojects/ui/fragments/SettingsFragment.kt,b/a/ba51b07c45c9501a62319542533a9936ced85c4b
 ‡
@@ -27,9 +25,7 @@ p
 @app/src/main/java/andres/rangel/degreeprojects/models/Project.kt,b/5/b5a9f7a67b6a4943738283a669f7c6131dc8ee63
 v
 Fapp/src/main/java/andres/rangel/degreeprojects/models/StatusProject.kt,5/d/5db49380b2c62bc82b026936439caed243081f27
-m
-=app/src/main/java/andres/rangel/degreeprojects/utils/Utils.kt,6/2/62c52610feebd465863160a191bb2618878b8498
-@
-app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
 ~
 Napp/src/main/java/andres/rangel/degreeprojects/ui/fragments/ProfileFragment.kt,d/c/dc1baebeb1f1508b087850a97b4cc269fa35a1af
+z
+Japp/src/main/java/andres/rangel/degreeprojects/adapters/ProjectsAdapter.kt,f/0/f00409bd11baadcd54a213d7e8fff872d9dad36e
