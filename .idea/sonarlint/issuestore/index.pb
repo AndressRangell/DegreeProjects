@@ -29,7 +29,7 @@ v
 Fapp/src/main/java/andres/rangel/degreeprojects/models/StatusProject.kt,5/d/5db49380b2c62bc82b026936439caed243081f27
 m
 =app/src/main/java/andres/rangel/degreeprojects/utils/Utils.kt,6/2/62c52610feebd465863160a191bb2618878b8498
-P
- app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
 @
 app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
+~
+Napp/src/main/java/andres/rangel/degreeprojects/ui/fragments/ProfileFragment.kt,d/c/dc1baebeb1f1508b087850a97b4cc269fa35a1af
